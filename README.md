@@ -65,14 +65,12 @@ Após esses passos, o banco MySQL estará em funcionamento, com todas as tabelas
 
 ## 3. Criação e povoamento do banco de dados
 
-A criação das tabelas e a carga de dados são realizadas automaticamente através dos scripts SQL presentes na pasta sql/, montada no container no diretório padrão /docker-entrypoint-initdb.d.
+A criação das tabelas e a carga de dados são realizadas automaticamente através dos scripts SQL presentes na pasta `sql/`, montada no container no diretório padrão `/docker-entrypoint-initdb.d`.
 
-### 3.1 Estrutura dos scripts:
+### 3.1 Estrutura dos scripts
 
-```bash
-sql/ddl.sql: Script de criação das tabelas (DDL).
-sql/dml.sql: Script de inserção de dados de teste (DML).
-```
+- **`sql/ddl.sql`**: Script de criação das tabelas (DDL).
+- **`sql/dml.sql`**: Script de inserção de dados de teste (DML).
 
 Os scripts são executados automaticamente na primeira inicialização do container MySQL.
 
@@ -90,13 +88,13 @@ docker compose up -d
 
 O banco pode ser acessado por ferramentas gráficas como MySQL Workbench ou DBeaver utilizando as seguintes configurações:
 
-- Host: 127.0.0.1
-- Porta: 3307
-- Banco: vagas_db
-- Usuário: user
-- Senha: password
+- **Host:** 127.0.0.1
+- **Porta:** 3307
+- **Banco:** vagas_db
+- **Usuário:** user
+- **Senha:** password
 
-A porta 3307 foi utilizada para evitar conflitos com instalações locais do MySQL.
+A porta `3307` foi utilizada para evitar conflitos com instalações locais do MySQL.
 
 Também é possível acessar o banco via terminal utilizando o comando abaixo:
 
@@ -112,12 +110,12 @@ O dicionário de dados do sistema descreve a finalidade de cada tabela, os atrib
 
 O dicionário pode ser consultado através de:
 
-Documento em PDF incluído no repositório
-📄 [Dicionário de Dados (PDF)](doc/Dicionario_de_dados.pdf)
+- **Documento em PDF incluído no repositório:**
+  📄 [Dicionário de Dados (PDF)](doc/Dicionario_de_dados.pdf)
 
-Metadados do próprio banco de dados, acessíveis via DBeaver (aba Columns e coluna Comment).
+- **Metadados do próprio banco de dados:** Acessíveis via DBeaver (aba *Columns* e coluna *Comment*).
 
-Scripts SQL de criação das tabelas.
+- **Scripts SQL:** Arquivos de criação das tabelas.
 
 As informações contemplam:
 - Descrição das tabelas
