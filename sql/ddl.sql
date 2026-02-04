@@ -10,7 +10,7 @@ CREATE TABLE Empresa (
     cnpj VARCHAR(14) UNIQUE NOT NULL,
     razao_social VARCHAR(80) NOT NULL,
     localizacao VARCHAR(50),
-    site VARCHAR(30),
+    site VARCHAR(1000),
     setor_atuacao VARCHAR (30),
     descricao LONGTEXT,
     CONSTRAINT fk_empresa_id_usuario
@@ -36,7 +36,7 @@ CREATE TABLE Curriculo (
     id_estudante INT NOT NULL UNIQUE,
     objetivo LONGTEXT,
     experiencia MEDIUMTEXT,
-    link_portifolio VARCHAR(80),
+    link_portifolio VARCHAR(1000),
     CONSTRAINT fk_curriculo_id_estudante
         FOREIGN KEY (id_estudante) REFERENCES Estudante(id_estudante)
 );
@@ -102,8 +102,8 @@ CREATE TABLE Entrevista (
     id_entrevista INT PRIMARY KEY AUTO_INCREMENT,
     id_candidatura INT NOT NULL,
     data_hora DATETIME NOT NULL,
-    link_local VARCHAR(100),
-    feedback VARCHAR(100),
+    link_local VARCHAR(1000),
+    feedback VARCHAR(1000),
     status VARCHAR(30),
     CONSTRAINT fk_entrevista_id_candidatura
         FOREIGN KEY (id_candidatura) REFERENCES Candidatura(id_candidatura)
